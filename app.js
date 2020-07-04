@@ -18,7 +18,7 @@ class Reviews extends React.Component {
     return (
       <div className="reviews shadow-sm p-3 mb-5 bg-white rounded">
         <h5>Reviews</h5>
-        <h1>1,780</h1>
+        <h1>{this.props.reviews}</h1>
       </div>
     )
   }
@@ -29,7 +29,7 @@ class Rating extends React.Component {
     return (
       <div className="rating shadow-sm p-3 mb-5 bg-white rounded">
         <h5>Average Rating</h5>
-        <h1>4.8</h1>
+        <h1>{this.props.rating}</h1>
       </div>
     )
   }
@@ -41,9 +41,9 @@ class Sentiment extends React.Component {
       <div className="sentiment shadow-sm p-3 mb-5 bg-white rounded">
         <h5>Sentiment Analysis</h5>
         <div className="list-sentiment">
-          <h2>901</h2>
-          <h2>290</h2>
-          <h2>180</h2>
+          <h2>{this.props.first}</h2>
+          <h2>{this.props.second}</h2>
+          <h2>{this.props.third}</h2>
         </div>
       </div>
     )
@@ -55,7 +55,7 @@ class Visitors extends React.Component {
     return (
       <div className="visitors shadow-sm p-3 mb-5 bg-white rounded">
         <h3>Website Visitors</h3>
-        <img src="https://d2x3xhvgiqkx42.cloudfront.net/12345678-1234-1234-1234-1234567890ab/2016/11/27/8f1ed816-a199-4601-99d9-8e1d42df8aa0.gif" className="chart"></img>
+        <img src={this.props.url} className="chart"></img>
       </div>
     )
   }
@@ -65,9 +65,9 @@ class Top extends React.Component {
   render() {
     return (
       <div className="top">
-        <Reviews />
-        <Rating />
-        <Sentiment />
+        <Reviews reviews="1,870" />
+        <Rating rating="4.8"/>
+        <Sentiment first="905" second="278" third="189" />
       </div>
     )
   }
@@ -78,7 +78,7 @@ class Detail extends React.Component {
     return (
       <div className="detail">
         <Top />
-        <Visitors />
+        <Visitors url="https://d2x3xhvgiqkx42.cloudfront.net/12345678-1234-1234-1234-1234567890ab/2016/11/27/8f1ed816-a199-4601-99d9-8e1d42df8aa0.gif"/>
       </div>
     )
   }
